@@ -11,14 +11,14 @@ const Navbar = () => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
 
-      // Hide navbar when scrolling down by 100 pixels
+      // Hide navbar when scrolling down by 250 pixels
       if (currentScrollPos > 250) {
         setIsNavbarVisible(false);
       } else {
         setIsNavbarVisible(true);
       }
 
-      // Change background color after scrolling past a certain point (e.g., 150 pixels)
+      // Change background color after scrolling down by 150 pixels
       if (currentScrollPos > 150) {
         setNavbarClass('bg-black'); // Change to your desired color
       } else {
@@ -42,7 +42,7 @@ const Navbar = () => {
     };
   }, [prevScrollPos]);
   return (
-    <nav className={`transition-all duration-150 ease-linear fixed z-50 w-full top- ${isNavbarVisible ? '' : 'transform -translate-y-full'} ${navbarClass}`}>
+    <nav className={`transition-all duration-300 ease-in-out fixed z-50 w-full top- ${isNavbarVisible ? '' : 'transform -translate-y-full'} ${navbarClass}`}>
       <div className="w-full sm:w-11/12 md:w-full max-w-7xl flex justify-between relative mx-auto py-5">
 
         {/* Navbar Logo */}
