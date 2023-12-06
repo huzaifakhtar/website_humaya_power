@@ -1,14 +1,13 @@
 // import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Head from 'next/head'
-import styles from '../styles/index.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
     <main>
-      <div className='bg-[#00000080] '>
+      <div className='bg-[#0000008c] '>
         <img className='w-full relative -z-10' alt='background image' src="/background1.jpg" />
       </div>
       <section className="text-gray-600 body-font">
