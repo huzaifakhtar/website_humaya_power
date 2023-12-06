@@ -1,0 +1,288 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    background: gray;
+    z-index: 50;
+    width: 100%;
+}
+
+.nav_wrapper {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    width: 100%;
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+@media(max-width: 768px) {
+    .nav_wrapper {
+        width: 90%;
+    }
+}
+
+@media(max-width: 638px) {
+    .nav_wrapper {
+        width: 100%;
+    }
+}
+
+.logo {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    align-items: center;
+    width: 10rem;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.navbar ul {
+    display: flex;
+    color: rgb(13, 26, 38);
+    align-items: center;
+    list-style: none;
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+}
+
+@media(max-width: 640px) {
+    .navbar ul {
+        display: none;
+    }
+}
+
+.navbar ul li {
+    padding: 1rem 1rem;
+    margin: 0rem 1rem;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.navbar ul li:hover {
+    color: #ff6800;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+}
+
+/* Animated Bottom Line */
+.navbar ul li:before,
+.navbar ul li:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    bottom: -1px;
+    background: rgb(13, 26, 38);
+}
+
+.navbar ul li:before {
+    left: 0;
+    transition: 0.5s;
+}
+
+/* .navbar ul li:after {
+    background: rgb(13, 26, 38);
+    right: 0;
+    transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+} */
+
+.navbar ul li:hover:before {
+    background: rgb(13, 26, 38);
+    width: 100%;
+    transition: width 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
+}
+
+/* .navbar ul li:hover:after {
+    background: transparent;
+    width: 100%;
+    transition: 0s;
+} */
+
+
+/*======================================================
+                    Mobile Menu Menu Icon
+  ======================================================*/
+  @media(max-width: 640px) {
+    .menuIcon {
+      cursor: pointer;
+      display: block;
+      position: fixed;
+      right: 15px;
+      top: 20px;
+      height: 23px;
+      width: 27px;
+      z-index: 12;
+    }
+  
+    /* Icon Bars */
+    .icon_bars {
+      background: rgb(13, 26, 38);
+      position: absolute;
+      left: 1px;
+      top: 45%;
+      height: 2px;
+      width: 20px;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    } 
+  
+    .icon_bars::before {
+      background: rgb(13, 26, 38);
+      content: '';
+      position: absolute;
+      left: 0;
+      top: -8px;
+      height: 2px;
+      width: 20px;
+  /*     -webkit-transition: top 0.2s ease 0.3s;
+      transition: top 0.2s ease 0.3s; */
+      -webkit-transition: 0.3s width 0.4s;
+      transition: 0.3s width 0.4s;
+    }
+  
+    .icon_bars::after {
+      margin-top: 0px;
+      background: rgb(13, 26, 38);
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      height: 2px;
+      width: 20px;
+  /*     -webkit-transition: top 0.2s ease 0.3s;
+      transition: top 0.2s ease 0.3s; */
+      -webkit-transition: 0.3s width 0.4s;
+      transition: 0.3s width 0.4s;
+    }
+  
+    /* Bars Shadows */
+    .icon_bars.overlay {
+      background: rgb(97, 114, 129);
+      background: rgb(183, 199, 211);
+      width: 20px;
+      animation: middleBar 3s infinite 0.5s;
+      -webkit-animation: middleBar 3s infinite 0.5s;
+    } @keyframes middleBar {
+        0% {width: 0px}
+        50% {width: 20px}
+        100% {width: 0px}
+      } @-webkit-keyframes middleBar {
+          0% {width: 0px}
+          50% {width: 20px}
+          100% {width: 0px}
+        }
+  
+    .icon_bars.overlay::before {
+      background: rgb(97, 114, 129);
+      background: rgb(183, 199, 211);
+      width: 10px;
+      animation: topBar 3s infinite 0.2s;
+      -webkit-animation: topBar 3s infinite 0s;
+    } @keyframes topBar {
+        0% {width: 0px}
+        50% {width: 10px}
+        100% {width: 0px}
+      } @-webkit-keyframes topBar {
+          0% {width: 0px}
+          50% {width: 10px}
+          100% {width: 0px}
+        }
+  
+    .icon_bars.overlay::after {
+      background: rgb(97, 114, 129);
+      background: rgb(183, 199, 211);
+      width: 15px;
+      animation: bottomBar 3s infinite 1s;
+      -webkit-animation: bottomBar 3s infinite 1s;
+    } @keyframes bottomBar {
+        0% {width: 0px}
+        50% {width: 15px}
+        100% {width: 0px}
+      } @-webkit-keyframes bottomBar {
+          0% {width: 0px}
+          50% {width: 15px}
+          100% {width: 0px}
+        }
+  
+  
+    /* Toggle Menu Icon */
+    .menuIcon.toggle .icon_bars {
+      top: 5px;
+      transform: translate3d(0, 5px, 0) rotate(135deg);
+      transition-delay: 0.1s;
+      transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+  
+    .menuIcon.toggle .icon_bars::before {
+      top: 0;
+      transition-delay: 0.1s;
+      opacity: 0;
+    }
+  
+    .menuIcon.toggle .icon_bars::after {
+      top: 10px;
+      transform: translate3d(0, -10px, 0) rotate(-270deg);
+      transition-delay: 0.1s;
+      transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+  
+    .menuIcon.toggle .icon_bars.overlay {
+      width: 20px;
+      opacity: 0;
+      -webkit-transition: all 0s ease 0s;
+      transition: all 0s ease 0s;
+    }
+  }
+  
+  
+  /*======================================================
+                     Responsive Mobile Menu 
+    ======================================================*/
+  .overlay_menu {
+    background: lightblue;
+    color: rgb(13, 26, 38);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-right: 15px;
+    transform: translateX(-100%);
+    width: 100vw;
+    height: 100vh;
+    -webkit-transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
+  }
+  
+  .overlay_menu ul, .overlay_menu li {
+    display: block;
+    position: relative;
+  }
+  
+  .overlay_menu li a {
+    display: block;
+    font-size: 1.8em;
+    letter-spacing: 4px;
+  /*   opacity: 0; */
+    padding: 10px 0;
+    text-align: right;
+    text-transform: uppercase;
+    -webkit-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+  /*   -webkit-transition: 0.2s opacity 0.2s ease-out;
+    transition: 0.2s opacity 0.2s ease-out; */
+  }
+  
+  .overlay_menu li a:hover,
+  .overlay_menu li a:active {
+    color: rgb(28, 121, 184);
+    -webkit-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+  }
