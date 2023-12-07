@@ -9,7 +9,7 @@ const Footer = () => {
                 <div className={`bg-orange-600 shadow-[-20px_-20px_0px_0px_rgba(52,58,64,0.2)] p-5 w-4/5 mx-auto block md:flex items-center !px-12`}>
                     <div>
                         <h2 className={`text-[2rem]`}>Ready for a next project?</h2>
-                        <h3 className={`mb-2 text-gray-900 text-[1.25rem]`}>Let's get started!</h3>
+                        <h3 className={`mb-2 text-gray-900 text-[1.25rem]`}>Let&apos;s get started!</h3>
                     </div>
                     <div className="ml-auto">
                         <Link href="#" className="inline-block bg-[#343a40] hover:bg-[#212529] py-4 px-12">Contact us</Link>
