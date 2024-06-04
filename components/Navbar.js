@@ -12,7 +12,7 @@ const Navbar = () => {
       const currentScrollPos = window.scrollY;
 
       // Hide navbar when scrolling down by 250 pixels
-      if (currentScrollPos > 250) {
+      if (currentScrollPos > 600) {
         setIsNavbarVisible(false);
       } else {
         setIsNavbarVisible(true);
@@ -26,7 +26,7 @@ const Navbar = () => {
       }
 
       // Show navbar when scrolling up
-      if (currentScrollPos < prevScrollPos) {
+      if (currentScrollPos < prevScrollPos && prevScrollPos - currentScrollPos > 200) {
         setIsNavbarVisible(true);
       }
 
